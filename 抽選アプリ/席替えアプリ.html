@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列（遅咲きエンジニア サンプル ver2）</title>
+</head>
+<body>
+<h1>席替えアプリのロジックを学ぶ</h1>
+<div id="seki"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+//配列：抽選者
+const a = ["山崎","児玉","神山","鈴木","田中","高橋","園田","井上","山岸","香田"];
+let column = 3;    //改行する列数を決める
+let count  = 1;    //ループ内の席数のスタート値
+const n = a.length;//配列の長さ（何名？）
+//繰り返し（人数分回ってもらいましょう）
+for(let i=0; i<n; i++){
+    //乱数：ｎ番目の人を取り出す
+    const r = Math.floor(Math.random() * a.length);
+    //splice → 変数vに取得した名前を代入
+    const v = a.splice(r, 1);
+    //column変数の席数で改行する
+    if(count%column == 0){
+        $("#seki").append("|"+v+"<br>");
+    }else{
+        $("#seki").append("|"+v);
+    }
+    count++;
+}
+//無くなってるはず？
+</script>
+</body>
+</html>

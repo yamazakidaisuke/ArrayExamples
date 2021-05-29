@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列(遅咲きエンジニア サンプル ver1)</title>
+</head>
+<body>
+<h1>配列の応用(consoleで確認)</h1>  
+
+<script>
+//配列：抽選者
+const a = ["A","B","C","D","E","F","G","H","I"];
+//配列の長さ（何名？）
+const n = a.length;
+//繰り返し（人数分回ってもらいましょう）
+for(let i=0; i<n; i++){
+    //乱数：ｎ番目の人を取り出す
+    const r = Math.floor(Math.random() * a.length);
+    //splice
+    const v = a.splice(r, 1);
+    //取得
+    console.log(v);
+}
+//無くなってるはず？
+</script>
+</body>
+</html>
